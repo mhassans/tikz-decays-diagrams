@@ -1,0 +1,49 @@
+\documentclass[border=10pt,10pt]{standalone}
+
+\usepackage{pgfplots,tikz}
+\usepackage{tikz-3dplot}
+\pgfplotsset{compat=newest}
+\usepackage{mathpazo}
+
+\begin{document}
+
+% fiddle with these
+\tdplotsetmaincoords{45}{90}
+
+\begin{tikzpicture}[scale=2.5,tdplot_main_coords]
+    \begin{scope}[]
+        % axes - use as guidelines
+        %\draw[thick,>=stealth',->] (-1,0,0) -- (1,0,0) node[above]{$x$};
+        %\draw[thick,>=stealth',->] (0,-1,0) -- (0,1,0) node[above]{$y$};
+        \draw[thick,>=stealth',->, dashed] (0,0,-1.5) -- (0,0,1.5) node[above]{$z$};
+        
+        % Interaction point
+        \filldraw (0,0,0) circle (0.01cm);
+        
+        % up and down particles
+        \draw[thick,>=stealth',->] (0,0,0) -- (0,0,1) node[anchor=180, below right]{$\pi^{-}$};
+        \draw[thick,>=stealth',->] (0,0,0) -- (0,0,-1) node[anchor=90, right]{$\mu^{+}$};
+        
+        % right particle
+        \begin{scope}[rotate around z=-50]
+            \draw[fill=gray!40,opacity=0.3] 
+                (0,0,-1) -- (1,0,-1) -- (1,0,1) -- (0,0,1) -- (0,0,-1);
+            \draw[thick,>=stealth',->,rotate around x=20]
+                (0,0,0) -- (0,1,0) node[anchor=200]{$\hat{\lambda}^{*+}$};
+        \end{scope}
+            
+        % left particle
+        \begin{scope}[rotate around z=50]
+            \draw[fill=gray!40,opacity=0.2] 
+                (0,0,-1) -- (1,0,-1) -- (1,0,1) -- (0,0,1) -- (0,0,-1);
+            \draw[thick,>=stealth',->,rotate around x=115]
+                (0,0,0) -- (0,1,0) node[anchor=60]{$\pi^{0}$};
+        \end{scope}
+        
+        % angle centred on (0,0,1) at radius 0.1 from 50 to 310 (obtuse to -50)
+        \tdplotdrawarc[gray!100,dashed,>=stealth',->]{(0,0,1)}{0.2}{50}{310}{above left}{$\phi_{\mathrm{CP}}$};
+    \end{scope}
+    
+\end{tikzpicture}
+
+\end{document}
