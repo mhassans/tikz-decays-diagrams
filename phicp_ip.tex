@@ -29,7 +29,7 @@
             \draw[fill=gray!40,opacity=0.3] 
                 (0,0,-1) -- (1,0,-1) -- (1,0,1) -- (0,0,1) -- (0,0,-1);
             \draw[thick,>=stealth',->,rotate around x=340]
-                (0,0,0) -- (0,1,0) node[anchor=200]{$\hat{\lambda}^{*+}$};
+                (0,0,0) -- (0,0.9,0) node[anchor=200]{$\lambda^{+}$};
         \end{scope}
             
         % left particle
@@ -37,11 +37,11 @@
             \draw[fill=gray!40,opacity=0.2] 
                 (0,0,-1) -- (1,0,-1) -- (1,0,1) -- (0,0,1) -- (0,0,-1);
             \draw[thick,>=stealth',->,rotate around x=130]
-                (0,0,0) -- (0,1,0) node[anchor=60]{$\hat{\lambda}^{*-}$};
+                (0,0,0) -- (0,1,0) node[anchor=60]{$\lambda^{-}$};
         \end{scope}
         
         % angle centred on (0,0,1) at radius 0.1 from 50 to 310 (obtuse to -50)
-        \tdplotdrawarc[gray!100,dashed,>=stealth',->]{(0,0,1)}{0.2}{50}{310}{above left}{$\phi_{\mathrm{CP}}$};
+        \tdplotdrawarc[gray!100,dashed,>=stealth',->]{(0,0,1)}{0.2}{50}{310}{above left}{$\phi_{\mathcal{CP}}$};
     \end{scope}
     
 \end{tikzpicture}

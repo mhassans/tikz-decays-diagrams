@@ -22,14 +22,14 @@
         
         % up and down particles
         \draw[thick,>=stealth',->] (0,0,0) -- (0,0,1) node[anchor=180, below right]{$\pi^{-}$};
-        \draw[thick,>=stealth',->] (0,0,0) -- (0,0,-1) node[anchor=90, right]{$\mu^{+}$};
+        \draw[thick,>=stealth',->] (0,0,0) -- (0,0,-1) node[anchor=90, right]{$\pi^{+}$};
         
         % right particle
         \begin{scope}[rotate around z=-50]
             \draw[fill=gray!40,opacity=0.3] 
                 (0,0,-1) -- (1,0,-1) -- (1,0,1) -- (0,0,1) -- (0,0,-1);
             \draw[thick,>=stealth',->,rotate around x=20]
-                (0,0,0) -- (0,1,0) node[anchor=200]{$\hat{\lambda}^{*+}$};
+                (0,0,0) -- (0,0.9,0) node[anchor=200]{$\lambda^{+}$};
         \end{scope}
             
         % left particle
@@ -41,7 +41,7 @@
         \end{scope}
         
         % angle centred on (0,0,1) at radius 0.1 from 50 to 310 (obtuse to -50)
-        \tdplotdrawarc[gray!100,dashed,>=stealth',->]{(0,0,1)}{0.2}{50}{310}{above left}{$\phi_{\mathrm{CP}}$};
+        \tdplotdrawarc[gray!100,dashed,>=stealth',->]{(0,0,1)}{0.2}{50}{310}{above left}{$\phi_{\mathcal{CP}}$};
     \end{scope}
     
 \end{tikzpicture}
